@@ -2,11 +2,23 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/">back</router-link> |
+      <button @click="jump(1)">jump1</button> |
+      <button @click="jump(2)">jump2</button>
     </div>
     <router-view />
   </div>
 </template>
+<script>
+export default {
+  methods: {
+    jump(id) {
+      this.$store.commit('SET_CURSUB', id)
+      location.href = `#/about?id=${id}`
+    }
+  }
+}
+</script>
 <style lang="stylus">
 #app
   font-family 'Avenir', Helvetica, Arial, sans-serif
