@@ -6,14 +6,16 @@
       <button @click="jump(1)">jump1</button> |
       <button @click="jump(2)">jump2</button>
     </div>
-    <router-view />
+    <router-view :key="$route.fullPath" />
   </div>
 </template>
 <script>
 export default {
   methods: {
     jump(id) {
+      console.warn('jump clicked')
       this.$store.commit('SET_CURSUB', id)
+      this.$store.commit('aboutModule/CLEAR_STORE')
       location.href = `#/about?id=${id}`
     }
   }

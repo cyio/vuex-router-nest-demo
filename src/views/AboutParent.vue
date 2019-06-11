@@ -33,8 +33,10 @@ export default {
     this.setPlayUrl()
   },
   beforeDestroy() { // beforeDestroy 执行可能在新页面组件 created 之后，会影响下个页面的清理操作需要在路由切换时处理
-    this.clearStore() 
-    console.log('before destory')
+    console.log('parent before destory')
+  },
+  destroyed() {
+    console.log('parent destroyed')
   }
 }
 </script>

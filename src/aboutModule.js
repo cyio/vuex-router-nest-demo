@@ -27,7 +27,7 @@ const Store = ({
     CLEAR_STORE(state) {
       console.log('before clear: ', state.playUrl)
       state.playUrl = '';
-      console.log('clear: ', state.playUrl)
+      console.log('cleared')
     }
   }
 });
